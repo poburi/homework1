@@ -12,16 +12,22 @@ const coinWrap2 = document.getElementById("CoinWrap-02");
 const coinBg1 = document.getElementById("CoinBg-01");
 const coinBg2 = document.getElementById("CoinBg-02");
 const coinBg3 = document.getElementById("CoinBg-03");
-let topBar = document.getElementById("topBar").clientHeight;
 const bgFixed = document.getElementById("bgFixed");
 
-// 코인 로딩 효과
+// 리사이징
+let lastWidth = window.innerWidth;
+window.onresize = () => { 
+  if(window.innerWidth != lastWidth) {
+    location.reload();
+  }
+}
+
+
 setTimeout(() => {
   coinWrap1.classList.add("active");
   coinWrap2.classList.add("active");
 }, 1000);
 
-// 시차효과
 function parallaxScroll() {
   let scrolled = window.scrollY;
 
@@ -33,40 +39,44 @@ function parallaxScroll() {
 // 스파크 에니메이션
 setTimeout(() => {
   spark.classList.add("active");
-}, 1700);
+}, 1500);
 
-// 리사이징
-window.onresize = function(){ location.reload(); }
-
-// SNS 공유하기 스크롤 이벤트
-function getCurrentScroll() {
-  return window.scrollY;
-}
+// 스크롤 위치 구하기
+// function getCurrentScroll() {
+//   return window.scrollY;
+// }
 
 var scrollBody = false;
 
-document.onscroll = () => {
+window.onscroll = () => {
   parallaxScroll();
 
-  const currentScroll = getCurrentScroll();
+  let currentScroll = window.scrollY;
+  let topBar = document.getElementById("topBar").clientHeight;
+
+  // sns 공유하기
   if (currentScroll > 300 && currentScroll < 400) {
     snsShare.classList.add("active", "animate");
   } else {
     snsShare.classList.remove("animate");
   }
 
+  // 배경
   if (currentScroll > topBar) {
     // layer1.classList.remove("bg-attach-not");
     layer1.classList.add("bg-attach");
     bgFixed.style.transform = `translateY(-${topBar}px)`;
     scrollBody = true;
-  } else if (currentScroll < topBar) {
+  } else if (currentScroll < topBar && scrollBody) {
     // layer1.classList.add("bg-attach-not");
     layer1.classList.remove("bg-attach");
     bgFixed.style.transform = "translateY(0)";
+    scrollBody = false;
   } else {
     scrollBody = false;
   }
+
+  console.log(`${currentScroll}, ${scrollBody}, ${topBar}!!!`)
 };
 
 // 참여하기 버튼 이벤트
@@ -108,6 +118,6 @@ if (AndroidAgent) {
 } else if (AppleAgent) {
   updateLink.setAttribute(
     "href",
-    "https://apps.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-kakaotalk/id362057947"
+    "https://itunes.apple.com/kr/app/id362057947"
   );
 }
