@@ -1,8 +1,8 @@
 {
-  "name": "kakaopay1",
+  "name": "homework1",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/poburi/kakaopay1.git",
+  "repository": "https://github.com/poburi/homework1.git",
   "author": "Heesong <poburi@kakao.com>",
   "license": "MIT",
   "scripts": {
