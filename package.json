@@ -1,0 +1,38 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/poburi/homework1.git",
+  "author": "Heesong <poburi@kakao.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "babelify": "^10.0.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-bro": "^2.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-gh-pages-with-updated-gift": "^0.5.4",
+    "gulp-sass": "^4.0.2",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.13.0",
+    "uglifyify": "^5.0.2"
+  },
+  "devDependencies": {
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-image": "^6.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}
