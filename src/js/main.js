@@ -12,14 +12,16 @@ const coinWrap2 = document.getElementById("CoinWrap-02");
 const coinBg1 = document.getElementById("CoinBg-01");
 const coinBg2 = document.getElementById("CoinBg-02");
 const coinBg3 = document.getElementById("CoinBg-03");
-const topBar = document.getElementById("topBar").clientHeight;
+let topBar = document.getElementById("topBar").clientHeight;
 const bgFixed = document.getElementById("bgFixed");
 
+// 코인 로딩 효과
 setTimeout(() => {
   coinWrap1.classList.add("active");
   coinWrap2.classList.add("active");
 }, 1000);
 
+// 시차효과
 function parallaxScroll() {
   let scrolled = window.scrollY;
 
@@ -31,7 +33,10 @@ function parallaxScroll() {
 // 스파크 에니메이션
 setTimeout(() => {
   spark.classList.add("active");
-}, 1500);
+}, 1700);
+
+// 리사이징
+window.onresize = function(){ location.reload(); }
 
 // SNS 공유하기 스크롤 이벤트
 function getCurrentScroll() {
