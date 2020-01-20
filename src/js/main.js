@@ -1,5 +1,3 @@
-// import $ from "jquery";
-
 const btnJoin = document.getElementById("btnJoin");
 const btnClose = document.getElementById("btnClose");
 const btnRemit = document.getElementById("btnRemit");
@@ -52,12 +50,10 @@ document.onscroll = () => {
     snsShare.classList.remove("animate");
   }
 
-  console.log(`current: ${currentScroll}, scrollY: ${window.scrollY}`);
   if (currentScroll > topBar) {
     // layer1.classList.remove("bg-attach-not");
     layer1.classList.add("bg-attach");
     bgFixed.style.transform = `translateY(-${topBar}px)`;
-    console.log("sdsfddsf");
     scrollBody = true;
   } else if (currentScroll < topBar) {
     // layer1.classList.add("bg-attach-not");
@@ -110,36 +106,3 @@ if (AndroidAgent) {
     "https://apps.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-kakaotalk/id362057947"
   );
 }
-
-// var scrollTop;
-// var target = $('.sns-share');
-// var targetTop = $('.sns-share').offset().top;
-
-// $(window).on('scroll', function() {
-// 	scrollTop = $(this).scrollTop();
-// 	var viewGuide = scrollTop + $(window).height() / 2;
-
-// 	if (viewGuide == targetTop) {
-// 		target.find('.share-box').addClass('active');
-// 	} else {
-// 		target.find('.share-box').removeClass('active');
-// 	}
-// });
-
-// $('.btn-request').on('click', function() {
-// 	$('.door').addClass;
-// });
-
-// $('.btn-close').on('click', function() {
-// 	$('.layer-01').animate({
-// 		opacity: 1,
-// 	});
-
-// 	$('.door-top').animate({
-// 		top: '-50%',
-// 	});
-
-// 	$('.door-bottom').animate({
-// 		bottom: '-50%',
-// 	});
-// });
