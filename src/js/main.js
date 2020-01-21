@@ -48,19 +48,21 @@ window.onscroll = () => {
   let currentScroll = window.scrollY;
   let topBar = document.getElementById("topBar").clientHeight;
 
+  let snsoffset = snsShare.offsetTop;
+  let currentsnsoffset = snsoffset - window.scrollY;
+  let half = window.innerHeight / 2;
+  let starthalf = half + 100;
+  let endhalf = half - 100;
+
+  console.log(
+    `${snsoffset}, ${half}, ${starthalf}, ${endhalf}, ${currentsnsoffset}`
+  );
+
   // sns 공유하기
-  if (window.innerHeight > 1000) {
-    if (currentScroll > 780 && currentScroll < 1000) {
-      snsShare.classList.add("active", "animate");
-    } else {
-      snsShare.classList.remove("animate");
-    }
+  if (currentsnsoffset > endhalf && currentsnsoffset < starthalf) {
+    snsShare.classList.add("active", "animate");
   } else {
-    if (currentScroll > 240 && currentScroll < 400) {
-      snsShare.classList.add("active", "animate");
-    } else {
-      snsShare.classList.remove("animate");
-    }
+    snsShare.classList.remove("animate");
   }
 
   // 배경
