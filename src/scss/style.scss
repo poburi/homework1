@@ -1,7 +1,6 @@
 @import "_common";
 @import "_variables";
 
-// 모든 엘리먼트 가운데 정렬
 body {
   position: relative;
   background-color: $bgColor;
@@ -184,19 +183,19 @@ img {
   }
 
   .coin-01 {
-    top: -50%;
+    top: -60%;
     left: 0;
     width: 13.2%;
   }
 
   .coin-02 {
     width: 16%;
-    top: -25.5%;
+    top: -14.5%;
     right: 0;
   }
 
   .coin-03 {
-    top: 8.7%;
+    top: 10.7%;
     left: 17%;
     width: 11%;
   }
@@ -204,7 +203,7 @@ img {
   .coin-04 {
     width: 9%;
     right: 9%;
-    top: -1.8%;
+    top: 7.2%;
     z-index: 1;
   }
 
@@ -1058,6 +1057,7 @@ img {
   }
 }
 
+// neon
 @keyframes glow {
   from {
     -ms-filter: drop-shadow(0 0 7px rgba(255, 180, 0, 0.5));

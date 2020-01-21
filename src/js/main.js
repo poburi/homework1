@@ -16,12 +16,11 @@ const bgFixed = document.getElementById("bgFixed");
 
 // 리사이징
 let lastWidth = window.innerWidth;
-window.onresize = () => { 
-  if(window.innerWidth != lastWidth) {
+window.onresize = () => {
+  if (window.innerWidth != lastWidth) {
     location.reload();
   }
-}
-
+};
 
 setTimeout(() => {
   coinWrap1.classList.add("active");
@@ -32,19 +31,14 @@ function parallaxScroll() {
   let scrolled = window.scrollY;
 
   coinBg1.style.top = -(scrolled * 0.25) + "px";
-  coinBg2.style.top = -(scrolled * 0.4) + "px";
-  coinBg3.style.top = -(scrolled * 0.75) + "px";
+  coinBg2.style.top = -(scrolled * 0.3) + "px";
+  coinBg3.style.top = -(scrolled * 0.4) + "px";
 }
 
 // 스파크 에니메이션
 setTimeout(() => {
   spark.classList.add("active");
 }, 1500);
-
-// 스크롤 위치 구하기
-// function getCurrentScroll() {
-//   return window.scrollY;
-// }
 
 var scrollBody = false;
 
@@ -75,8 +69,6 @@ window.onscroll = () => {
   } else {
     scrollBody = false;
   }
-
-  console.log(`${currentScroll}, ${scrollBody}, ${topBar}!!!`)
 };
 
 // 참여하기 버튼 이벤트
