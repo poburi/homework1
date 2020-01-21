@@ -54,10 +54,6 @@ window.onscroll = () => {
   let starthalf = half + 100;
   let endhalf = half - 100;
 
-  console.log(
-    `${snsoffset}, ${half}, ${starthalf}, ${endhalf}, ${currentsnsoffset}`
-  );
-
   // sns 공유하기
   if (currentsnsoffset > endhalf && currentsnsoffset < starthalf) {
     snsShare.classList.add("active", "animate");
