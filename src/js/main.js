@@ -42,14 +42,24 @@ setTimeout(() => {
 
 var scrollBody = false;
 
+function getCurrentScrollPercentage() {
+  let scrolled = window.scrollY;
+  if (window.innerHeight > 1000) {
+    console.log("sdffs");
+    scrolled = window.scrollY / 2;
+  }
+
+  return scrolled;
+}
+
 window.onscroll = () => {
   parallaxScroll();
 
-  let currentScroll = window.scrollY;
+  let currentScroll = getCurrentScrollPercentage();
   let topBar = document.getElementById("topBar").clientHeight;
 
   // sns 공유하기
-  if (currentScroll > 300 && currentScroll < 400) {
+  if (currentScroll > 240 && currentScroll < 400) {
     snsShare.classList.add("active", "animate");
   } else {
     snsShare.classList.remove("animate");
@@ -69,6 +79,8 @@ window.onscroll = () => {
   } else {
     scrollBody = false;
   }
+
+  console.log(`${currentScroll}`);
 };
 
 // 참여하기 버튼 이벤트
