@@ -26,7 +26,7 @@
     "gulp-gh-pages-with-updated-gift": "^0.5.4",
     "gulp-sass": "^4.0.2",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "uglifyify": "^5.0.2"
   },
   "devDependencies": {
